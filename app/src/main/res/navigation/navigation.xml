@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/feedFragment">
+
+    <fragment
+        android:id="@+id/newPostFragment"
+        android:name="com.example.praktik_zadanie3__penkov.activity.NewPostActivity"
+        android:label="fragment_new_post"
+        tools:layout="@layout/activity_new_post" />
+    <fragment
+        android:id="@+id/feedFragment"
+        android:name="com.example.praktik_zadanie3__penkov.activity.FeedFragment"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_feed" >
+        <action
+            android:id="@+id/action_feedFragment_to_newPostActivity"
+            app:destination="@id/newPostFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <action
+            android:id="@+id/action_feedFragment_to_oneFragmentPost3"
+            app:destination="@id/oneFragmentPost3" />
+    </fragment>
+    <fragment
+        android:id="@+id/oneFragmentPost3"
+        android:name="com.example.praktik_zadanie3__penkov.activity.OneFragmentPost"
+        android:label="activity_one_fragment_post"
+        tools:layout="@layout/activity_one_fragment_post" >
+        <action
+            android:id="@+id/action_oneFragmentPost3_to_newPostFragment"
+            app:destination="@id/newPostFragment" />
+    </fragment>
+</navigation>
